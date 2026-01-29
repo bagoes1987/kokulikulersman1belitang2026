@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import AuthDependentContent from '@/components/AuthDependentContent';
 
 export default function Home() {
   return (
@@ -39,65 +40,15 @@ export default function Home() {
             lineHeight: '1.6',
             textShadow: '1px 1px 2px rgba(255,255,255,0.8)'
           }}>
-            Projek Penguatan Profil Pelajar Pancasila (P5) <br />
+            {/* P5 Text Removed as requested */}
             <span style={{ color: 'var(--color-primary)', fontSize: '1.2rem', textTransform: 'uppercase', letterSpacing: '2px' }}>SMA Negeri 1 Belitang</span>
           </p>
         </section>
 
-        {/* Days Cards */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-          gap: '2.5rem',
-          marginBottom: '6rem'
-        }}>
-          {['Eksplorasi & Ideasi', 'Produksi & Promosi', 'Panen Raya'].map((title, index) => (
-            <div key={index} className={`glass-card animate-slide-up delay-${(index + 1) * 100}`} style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              textAlign: 'center',
-              cursor: 'pointer',
-              position: 'relative',
-              overflow: 'hidden'
-            }}>
-              <div style={{
-                width: '70px',
-                height: '70px',
-                borderRadius: '50%',
-                background: 'linear-gradient(135deg, var(--color-primary), var(--color-secondary))',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontSize: '2rem',
-                fontWeight: 'bold',
-                color: 'white',
-                marginBottom: '1.5rem',
-                boxShadow: '0 10px 20px rgba(139, 69, 19, 0.3)'
-              }}>
-                {index + 1}
-              </div>
-              <h2 style={{ color: 'var(--color-primary)', fontSize: '1.8rem', marginBottom: '0.5rem' }}>Day {index + 1}</h2>
-              <h3 style={{ fontSize: '1.2rem', color: '#6B4E3D', marginBottom: '1rem', fontWeight: '600' }}>{title}</h3>
-              <p style={{ marginBottom: '2rem', flexGrow: 1, lineHeight: '1.6', color: '#555' }}>
-                {index === 0 && 'Menggali potensi kuliner nusantara melalui riset dan ideasi kreatif.'}
-                {index === 1 && 'Mengolah rasa authentik dan menyusun strategi pemasaran digital yang modern.'}
-                {index === 2 && 'Market Day: Gelar karya wirausaha dan apresiasi seni kuliner.'}
-              </p>
-              <Link href={`/days/${index + 1}`} className="btn btn-primary" style={{
-                width: '100%',
-                borderRadius: '50px',
-                textTransform: 'uppercase',
-                letterSpacing: '1px',
-                fontSize: '0.9rem'
-              }}>
-                Mulai Kegiatan
-              </Link>
-            </div>
-          ))}
-        </div>
+        {/* Conditional Content: Days (Auth) vs Info (Public) */}
+        <AuthDependentContent />
 
-        {/* Learning Goals Section */}
+        {/* Learning Goals Section - Always Visible */}
         <section className="glass-card animate-slide-up delay-300" style={{ padding: '4rem 2rem', borderLeft: '5px solid var(--color-secondary)' }}>
           <h2 style={{ textAlign: 'center', marginBottom: '3rem', color: 'var(--color-primary)', fontSize: '2.5rem' }}>Tujuan Pembelajaran</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
