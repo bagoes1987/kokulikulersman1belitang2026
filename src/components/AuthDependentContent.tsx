@@ -190,7 +190,7 @@ export default function AuthDependentContent() {
             </section>
 
             {/* VI. KEMITRAAN PEMBELAJARAN */}
-            <section className="glass-card" style={{ padding: '3rem', marginBottom: '4rem' }}>
+            <section className="glass-card" style={{ padding: '3rem', marginBottom: '2rem' }}>
                 <h3 style={{ color: 'var(--color-primary)', fontSize: '1.8rem', borderBottom: '2px solid var(--color-secondary)', paddingBottom: '0.5rem', marginBottom: '1.5rem' }}>
                     VI. KEMITRAAN PEMBELAJARAN (INTERNAL)
                 </h3>
@@ -211,18 +211,83 @@ export default function AuthDependentContent() {
                 </div>
             </section>
 
-            {/* CTA Section - Moved to Bottom */}
+            {/* VII. PRAKTIK PEDAGOGIS */}
+            <section className="glass-card" style={{ padding: '3rem', marginBottom: '2rem' }}>
+                <h3 style={{ color: 'var(--color-primary)', fontSize: '1.8rem', borderBottom: '2px solid var(--color-secondary)', paddingBottom: '0.5rem', marginBottom: '1.5rem' }}>
+                    VII. PRAKTIK PEDAGOGIS
+                </h3>
+                <ul style={{ paddingLeft: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                    <li>Penerapan Project Based Learning (PjBL)</li>
+                    <li>Diskusi kelompok dan sesi tanya jawab</li>
+                    <li>Demonstrasi pembuatan jajanan tradisional sehat</li>
+                    <li>Praktik langsung memasak dan penyajian</li>
+                    <li>Simulasi kegiatan jual beli sederhana</li>
+                    <li>Presentasi hasil produk dan penjualan</li>
+                    <li>Refleksi individu dan refleksi kelompok</li>
+                </ul>
+            </section>
+
+            {/* VIII. LINGKUNGAN PEMBELAJARAN */}
+            <section className="glass-card" style={{ padding: '3rem', marginBottom: '2rem' }}>
+                <h3 style={{ color: 'var(--color-primary)', fontSize: '1.8rem', borderBottom: '2px solid var(--color-secondary)', paddingBottom: '0.5rem', marginBottom: '1.5rem' }}>
+                    VIII. LINGKUNGAN PEMBELAJARAN
+                </h3>
+                <ul style={{ paddingLeft: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                    <li>Ruang kelas sebagai tempat diskusi dan perencanaan</li>
+                    <li>Area praktik memasak sederhana (kantin/dapur sekolah)</li>
+                    <li>Lingkungan sekolah sebagai lokasi bazar mini</li>
+                    <li>Lingkungan rumah dengan pendampingan orang tua</li>
+                    <li>Lingkungan sosial yang kolaboratif, aman, dan mendukung</li>
+                </ul>
+            </section>
+
+            {/* IX. DESAIN PEMBELAJARAN */}
+            <section className="glass-card" style={{ padding: '3rem', marginBottom: '2rem' }}>
+                <h3 style={{ color: 'var(--color-primary)', fontSize: '1.8rem', borderBottom: '2px solid var(--color-secondary)', paddingBottom: '0.5rem', marginBottom: '1.5rem' }}>
+                    IX. DESAIN PEMBELAJARAN
+                </h3>
+                <div style={{ display: 'grid', gap: '1rem' }}>
+                    <div>
+                        <strong style={{ color: 'var(--color-accent)' }}>1. Strategi Pembelajaran:</strong>
+                        <span style={{ marginLeft: '0.5rem' }}>Project Based Learning, diskusi, praktik, dan refleksi</span>
+                    </div>
+                    <div>
+                        <strong style={{ color: 'var(--color-accent)' }}>2. Metode Pembelajaran:</strong>
+                        <span style={{ marginLeft: '0.5rem' }}>Demonstrasi, kerja kelompok, simulasi, dan presentasi</span>
+                    </div>
+                    <div>
+                        <strong style={{ color: 'var(--color-accent)' }}>3. Penilaian:</strong>
+                        <span style={{ marginLeft: '0.5rem' }}>Sikap, pengetahuan, dan keterampilan</span>
+                    </div>
+                </div>
+            </section>
+
+            {/* X. PRODUK AKHIR */}
+            <section className="glass-card" style={{ padding: '3rem', marginBottom: '4rem' }}>
+                <h3 style={{ color: 'var(--color-primary)', fontSize: '1.8rem', borderBottom: '2px solid var(--color-secondary)', paddingBottom: '0.5rem', marginBottom: '1.5rem' }}>
+                    X. PRODUK AKHIR
+                </h3>
+                <ul style={{ paddingLeft: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.75rem', fontWeight: '500' }}>
+                    <li>1. Masakan Khas Nusantara sehat</li>
+                    <li>2. Label dan kemasan produk yang terdiri ideo promosi, status WhatsApp, dan konten Instagram untuk pemasaran produk.</li>
+                    <li>3. Laporan dan refleksi kegiatan</li>
+                    <li>4. Bazar mini jajanan tradisional sehat</li>
+                </ul>
+            </section>
+
+            {/* CTA Section - At the very bottom */}
             <div className="glass-card" style={{
                 padding: '4rem 2rem',
                 textAlign: 'center',
                 borderTop: '5px solid var(--color-primary)',
-                background: 'rgba(255, 255, 255, 0.95)'
+                background: 'rgba(255, 255, 255, 0.95)',
+                marginTop: '4rem'
             }}>
                 <h2 style={{ fontSize: '2rem', color: 'var(--color-primary)', marginBottom: '1rem' }}>
                     Siap Memulai Kegiatan?
                 </h2>
                 <p style={{ fontSize: '1.2rem', marginBottom: '2rem', maxWidth: '600px', marginLeft: 'auto', marginRight: 'auto' }}>
-                    Silakan masuk untuk mengakses materi lengkap kegiatan, LKPD, dan tugas harian.
+                    Silakan masuk untuk akses materi lengkap, LKPD, dan tugas harian.
                 </p>
                 <Link href="/login" className="btn btn-primary" style={{ borderRadius: '50px', padding: '1rem 3rem', fontSize: '1.2rem', boxShadow: '0 4px 15px rgba(139, 69, 19, 0.3)' }}>
                     Masuk Sekarang
