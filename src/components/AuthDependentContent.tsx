@@ -93,24 +93,6 @@ export default function AuthDependentContent() {
     return (
         <div className="animate-slide-up" style={{ marginBottom: '6rem' }}>
 
-            {/* CTA Section */}
-            <div className="glass-card" style={{
-                padding: '3rem',
-                textAlign: 'center',
-                marginBottom: '4rem',
-                borderLeft: '5px solid var(--color-primary)'
-            }}>
-                <h2 style={{ fontSize: '2rem', color: 'var(--color-primary)', marginBottom: '1rem' }}>
-                    Selamat Datang di Portal Kokurikuler
-                </h2>
-                <p style={{ fontSize: '1.2rem', marginBottom: '2rem' }}>
-                    Silakan masuk untuk mengakses materi kegiatan hari 1-3.
-                </p>
-                <Link href="/login" className="btn btn-primary" style={{ borderRadius: '50px', padding: '0.8rem 2.5rem', fontSize: '1.1rem' }}>
-                    Masuk Sekarang
-                </Link>
-            </div>
-
             {/* I. INFORMASI UMUM */}
             <section className="glass-card" style={{ padding: '3rem', marginBottom: '2rem' }}>
                 <h3 style={{ color: 'var(--color-primary)', fontSize: '1.8rem', borderBottom: '2px solid var(--color-secondary)', paddingBottom: '0.5rem', marginBottom: '1.5rem' }}>
@@ -164,7 +146,7 @@ export default function AuthDependentContent() {
             </section>
 
             {/* IV. KEMITRAAN PEMBELAJARAN */}
-            <section className="glass-card" style={{ padding: '3rem' }}>
+            <section className="glass-card" style={{ padding: '3rem', marginBottom: '4rem' }}>
                 <h3 style={{ color: 'var(--color-primary)', fontSize: '1.8rem', borderBottom: '2px solid var(--color-secondary)', paddingBottom: '0.5rem', marginBottom: '1.5rem' }}>
                     IV. KEMITRAAN PEMBELAJARAN (INTERNAL)
                 </h3>
@@ -184,6 +166,24 @@ export default function AuthDependentContent() {
                     </div>
                 </div>
             </section>
+
+            {/* CTA Section - Moved to Bottom */}
+            <div className="glass-card" style={{
+                padding: '4rem 2rem',
+                textAlign: 'center',
+                borderTop: '5px solid var(--color-primary)',
+                background: 'rgba(255, 255, 255, 0.95)'
+            }}>
+                <h2 style={{ fontSize: '2rem', color: 'var(--color-primary)', marginBottom: '1rem' }}>
+                    Siap Memulai Kegiatan?
+                </h2>
+                <p style={{ fontSize: '1.2rem', marginBottom: '2rem', maxWidth: '600px', marginLeft: 'auto', marginRight: 'auto' }}>
+                    Silakan masuk untuk mengakses materi lengkap kegiatan, LKPD, dan tugas harian.
+                </p>
+                <Link href="/login" className="btn btn-primary" style={{ borderRadius: '50px', padding: '1rem 3rem', fontSize: '1.2rem', boxShadow: '0 4px 15px rgba(139, 69, 19, 0.3)' }}>
+                    Masuk Sekarang
+                </Link>
+            </div>
         </div>
     );
 }
