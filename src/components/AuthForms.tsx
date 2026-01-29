@@ -117,6 +117,12 @@ export function RegisterSiswaForm() {
         setLoading(false);
     };
 
+    const classOptions = [
+        ...Array.from({ length: 11 }, (_, i) => `X.${i + 1}`),
+        ...Array.from({ length: 11 }, (_, i) => `XI.${i + 1}`),
+        ...Array.from({ length: 10 }, (_, i) => `XII.${i + 1}`)
+    ];
+
     return (
         <form onSubmit={handleRegister} className="auth-box">
             <h2 style={{ textAlign: 'center', color: 'var(--color-primary)' }}>Daftar Siswa</h2>
@@ -124,7 +130,15 @@ export function RegisterSiswaForm() {
 
             <div className="form-group"><label className="form-label">Nama Siswa</label><input name="nama" onChange={handleChange} className="form-input" required /></div>
             <div className="form-group"><label className="form-label">NIS</label><input name="nis" onChange={handleChange} className="form-input" required /></div>
-            <div className="form-group"><label className="form-label">Kelas</label><input name="kelas" onChange={handleChange} className="form-input" required /></div>
+            <div className="form-group">
+                <label className="form-label">Kelas</label>
+                <select name="kelas" onChange={handleChange as any} className="form-input" required style={{ background: 'white' }}>
+                    <option value="">Pilih Kelas...</option>
+                    {classOptions.map(cls => (
+                        <option key={cls} value={cls}>{cls}</option>
+                    ))}
+                </select>
+            </div>
             <div className="form-group"><label className="form-label">Fasilitator Kokulikuler</label><input name="fasilitator" onChange={handleChange} className="form-input" required /></div>
             <div className="form-group"><label className="form-label">Email</label><input name="email" type="email" onChange={handleChange} className="form-input" required /></div>
             <div className="form-group"><label className="form-label">Password</label><input name="password" type="password" onChange={handleChange} className="form-input" required /></div>
@@ -179,6 +193,12 @@ export function RegisterGuruForm() {
         setLoading(false);
     };
 
+    const classOptions = [
+        ...Array.from({ length: 11 }, (_, i) => `X.${i + 1}`),
+        ...Array.from({ length: 11 }, (_, i) => `XI.${i + 1}`),
+        ...Array.from({ length: 10 }, (_, i) => `XII.${i + 1}`)
+    ];
+
     return (
         <form onSubmit={handleRegister} className="auth-box">
             <h2 style={{ textAlign: 'center', color: 'var(--color-primary)' }}>Daftar Guru</h2>
@@ -186,7 +206,15 @@ export function RegisterGuruForm() {
 
             <div className="form-group"><label className="form-label">Nama Guru</label><input name="nama" onChange={handleChange} className="form-input" required /></div>
             <div className="form-group"><label className="form-label">NIP</label><input name="nip" onChange={handleChange} className="form-input" required /></div>
-            <div className="form-group"><label className="form-label">Fasilitator Kelas</label><input name="fasilitator" onChange={handleChange} className="form-input" required /></div>
+            <div className="form-group">
+                <label className="form-label">Fasilitator Kelas</label>
+                <select name="fasilitator" onChange={handleChange as any} className="form-input" required style={{ background: 'white' }}>
+                    <option value="">Pilih Kelas...</option>
+                    {classOptions.map(cls => (
+                        <option key={cls} value={cls}>{cls}</option>
+                    ))}
+                </select>
+            </div>
             <div className="form-group"><label className="form-label">Email</label><input name="email" type="email" onChange={handleChange} className="form-input" required /></div>
             <div className="form-group"><label className="form-label">Password</label><input name="password" type="password" onChange={handleChange} className="form-input" required /></div>
 
