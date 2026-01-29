@@ -9,6 +9,11 @@ const outfit = Outfit({ subsets: ["latin"], variable: "--font-heading" });
 export const metadata: Metadata = {
   title: "Kokurikuler SMAN 1 Belitang",
   description: "Platform Pembelajaran Kokurikuler - Cita Rasa Nusantara",
+  icons: {
+    icon: '/logo.png', // Explicitly point to logo
+    shortcut: '/logo.png',
+    apple: '/logo.png',
+  },
 };
 
 export default function RootLayout({

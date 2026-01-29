@@ -11,7 +11,7 @@ export default function Header() {
             padding: '1rem 0',
             transition: 'all 0.3s ease'
         }}>
-            <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <div className="container header-container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap' }}>
                 <Link href="/" style={{
                     fontSize: '1.5rem',
                     fontWeight: '800',
@@ -22,8 +22,8 @@ export default function Header() {
                     alignItems: 'center',
                     gap: '1rem' // increased gap
                 }}>
-                    <img src="/logo.png" alt="Logo SMAN 1 Belitang" style={{ height: '50px', width: 'auto' }} />
-                    <span style={{ fontSize: '1.2rem', letterSpacing: '1px' }}>SMAN 1 BELITANG</span>
+                    <img src="/logo.png" alt="Logo SMAN 1 Belitang" style={{ height: '50px', width: 'auto', maxHeight: '50px' }} />
+                    <span style={{ fontSize: '1.2rem', letterSpacing: '1px', lineHeight: '1.2' }}>SMAN 1 BELITANG</span>
                 </Link>
                 <nav>
                     <ul style={{ display: 'flex', gap: '1rem', listStyle: 'none', margin: 0, padding: 0 }}>
