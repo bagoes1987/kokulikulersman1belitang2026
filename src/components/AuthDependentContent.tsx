@@ -100,7 +100,7 @@ export default function AuthDependentContent() {
                 </h3>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '1rem', fontSize: '1.1rem' }}>
                     <p><strong>Nama Satuan Pendidikan:</strong> SMA Negeri 1 Belitang</p>
-                    <p><strong>Kelas / Fase:</strong> X (Sepuluh) / Fase E</p>
+                    <p><strong>Kelas :</strong> X, XI, dan XII</p>
                     <p><strong>Tema:</strong> Cita Rasa Nusantara</p>
                     <p><strong>Bentuk Kegiatan:</strong> Pembelajaran Kolaboratif Lintas Disiplin Ilmu</p>
                     <p><strong>Alokasi Waktu:</strong> 3 Hari Efektif</p>
