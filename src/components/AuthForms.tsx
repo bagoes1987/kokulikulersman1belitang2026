@@ -111,8 +111,11 @@ export function RegisterSiswaForm() {
         if (signUpError) {
             setError(signUpError.message);
         } else {
-            alert('Registrasi Berhasil! Silakan cek email untuk verifikasi (jika diaktifkan) atau login.');
-            router.push('/login');
+            // Auto-redirect assuming email confirmation is disabled or handled
+            console.log('Registration success:', data);
+            alert('Registrasi Berhasil! Mengalihkan ke dashboard...');
+            router.push('/'); // Redirect to home/dashboard
+            router.refresh();
         }
         setLoading(false);
     };
@@ -171,7 +174,7 @@ export function RegisterGuruForm() {
         setLoading(true);
         setError(null);
 
-        const { error: signUpError } = await supabase.auth.signUp({
+        const { error: signUpError, data } = await supabase.auth.signUp({
             email: formData.email,
             password: formData.password,
             options: {
@@ -187,8 +190,11 @@ export function RegisterGuruForm() {
         if (signUpError) {
             setError(signUpError.message);
         } else {
-            alert('Registrasi Guru Berhasil!');
-            router.push('/login');
+            // Auto-redirect assuming email confirmation is disabled or handled
+            console.log('Registration success:', data);
+            alert('Registrasi Berhasil! Mengalihkan ke dashboard...');
+            router.push('/');
+            router.refresh();
         }
         setLoading(false);
     };
