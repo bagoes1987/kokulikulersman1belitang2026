@@ -108,27 +108,10 @@ export default function AuthDependentContent() {
                 </div>
             </section>
 
-            {/* II. DIMENSI PROFIL LULUSAN */}
+            {/* II. TUJUAN PEMBELAJARAN (Was III) */}
             <section className="glass-card" style={{ padding: '3rem', marginBottom: '2rem' }}>
                 <h3 style={{ color: 'var(--color-primary)', fontSize: '1.8rem', borderBottom: '2px solid var(--color-secondary)', paddingBottom: '0.5rem', marginBottom: '1.5rem' }}>
-                    II. DIMENSI PROFIL LULUSAN
-                </h3>
-                <ul style={{ listStyle: 'none', padding: 0 }}>
-                    <li style={{ marginBottom: '1.5rem' }}>
-                        <strong style={{ color: 'var(--color-accent)', fontSize: '1.2rem' }}>Kreativitas</strong>
-                        <p style={{ marginTop: '0.5rem' }}>Murid diharapkan mampu menghasilkan gagasan orisinal, menciptakan inovasi produk kuliner, dan merumuskan solusi bagi permasalahan di sekitarnya.</p>
-                    </li>
-                    <li>
-                        <strong style={{ color: 'var(--color-accent)', fontSize: '1.2rem' }}>Komunikasi</strong>
-                        <p style={{ marginTop: '0.5rem' }}>Murid memiliki kemampuan menyimak, membaca, berbicara, dan menulis dengan baik sesuai etika dalam beragam konteks dan moda untuk memasarkan produk.</p>
-                    </li>
-                </ul>
-            </section>
-
-            {/* III. TUJUAN PEMBELAJARAN */}
-            <section className="glass-card" style={{ padding: '3rem', marginBottom: '2rem' }}>
-                <h3 style={{ color: 'var(--color-primary)', fontSize: '1.8rem', borderBottom: '2px solid var(--color-secondary)', paddingBottom: '0.5rem', marginBottom: '1.5rem' }}>
-                    III. TUJUAN PEMBELAJARAN
+                    II. TUJUAN PEMBELAJARAN
                 </h3>
                 <p style={{ marginBottom: '1rem', fontStyle: 'italic' }}>Kegiatan kokurikuler ini bertujuan untuk menguatkan kompetensi murid agar:</p>
                 <ul style={{ listStyle: 'none', padding: 0 }}>
@@ -142,6 +125,23 @@ export default function AuthDependentContent() {
                             <span>{item}</span>
                         </li>
                     ))}
+                </ul>
+            </section>
+
+            {/* III. DIMENSI PROFIL LULUSAN (Was II) */}
+            <section className="glass-card" style={{ padding: '3rem', marginBottom: '2rem' }}>
+                <h3 style={{ color: 'var(--color-primary)', fontSize: '1.8rem', borderBottom: '2px solid var(--color-secondary)', paddingBottom: '0.5rem', marginBottom: '1.5rem' }}>
+                    III. DIMENSI PROFIL LULUSAN
+                </h3>
+                <ul style={{ listStyle: 'none', padding: 0 }}>
+                    <li style={{ marginBottom: '1.5rem' }}>
+                        <strong style={{ color: 'var(--color-accent)', fontSize: '1.2rem' }}>Kreativitas</strong>
+                        <p style={{ marginTop: '0.5rem' }}>Murid mampu menghasilkan gagasan orisinal dan inovatif dalam menciptakan produk olahan, merumuskan solusi usaha, serta melakukan perhitungan BEP untuk menilai kelayakan produk.</p>
+                    </li>
+                    <li>
+                        <strong style={{ color: 'var(--color-accent)', fontSize: '1.2rem' }}>Komunikasi</strong>
+                        <p style={{ marginTop: '0.5rem' }}>Murid mampu berkomunikasi secara efektif dan beretika serta mempresentasikan kandungan gizi produk olahan secara menarik untuk meningkatkan minat beli.</p>
+                    </li>
                 </ul>
             </section>
 
