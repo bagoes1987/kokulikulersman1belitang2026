@@ -110,45 +110,22 @@ export default function AuthDependentContent() {
 
             {/* II. TUJUAN PEMBELAJARAN */}
             <section className="glass-card" style={{ padding: '3rem', marginBottom: '2rem' }}>
-                <h3 style={{ color: 'var(--color-primary)', fontSize: '1.8rem', borderBottom: '2px solid var(--color-secondary)', paddingBottom: '0.5rem', marginBottom: '2rem', textAlign: 'center' }}>
+                <h3 style={{ color: 'var(--color-primary)', fontSize: '1.8rem', borderBottom: '2px solid var(--color-secondary)', paddingBottom: '0.5rem', marginBottom: '1.5rem' }}>
                     II. TUJUAN PEMBELAJARAN
                 </h3>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
-
-                    {/* Item 1: Inovasi Kuliner */}
-                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
-                        <div style={{ fontSize: '3rem', marginBottom: '1rem', background: '#FFF3E0', width: '80px', height: '80px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                            🍳
-                        </div>
-                        <h4 style={{ fontSize: '1.25rem', color: '#2F1B10', marginBottom: '0.5rem', fontWeight: 'bold' }}>Inovasi Kuliner</h4>
-                        <p style={{ color: '#555', lineHeight: '1.6' }}>
-                            Mampu melakukan inovasi pengolahan makanan khas Nusantara dengan mempertimbangkan nilai ekonomis dan perhitungan Break Even Point (BEP).
-                        </p>
-                    </div>
-
-                    {/* Item 2: Analisis Gizi */}
-                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
-                        <div style={{ fontSize: '3rem', marginBottom: '1rem', background: '#E8F5E9', width: '80px', height: '80px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                            🥗
-                        </div>
-                        <h4 style={{ fontSize: '1.25rem', color: '#2F1B10', marginBottom: '0.5rem', fontWeight: 'bold' }}>Analisis Gizi</h4>
-                        <p style={{ color: '#555', lineHeight: '1.6' }}>
-                            Mampu menganalisis dan menjelaskan kandungan gizi serta higienitas bahan pangan yang digunakan.
-                        </p>
-                    </div>
-
-                    {/* Item 3: Digital Marketing */}
-                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
-                        <div style={{ fontSize: '3rem', marginBottom: '1rem', background: '#E3F2FD', width: '80px', height: '80px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                            📱
-                        </div>
-                        <h4 style={{ fontSize: '1.25rem', color: '#2F1B10', marginBottom: '0.5rem', fontWeight: 'bold' }}>Digital Marketing</h4>
-                        <p style={{ color: '#555', lineHeight: '1.6' }}>
-                            Mampu memanfaatkan teknologi digital untuk strategi pemasaran dan berkomunikasi secara persuasif kepada publik.
-                        </p>
-                    </div>
-
-                </div>
+                <p style={{ marginBottom: '1rem', fontStyle: 'italic' }}>Kegiatan kokurikuler ini bertujuan untuk menguatkan kompetensi murid agar:</p>
+                <ul style={{ listStyle: 'none', padding: 0 }}>
+                    {[
+                        'Mampu melakukan inovasi pengolahan makanan khas Nusantara dengan mempertimbangkan nilai ekonomis dan perhitungan Break Even Point (BEP).',
+                        'Mampu menganalisis dan menjelaskan kandungan gizi serta higienitas bahan pangan yang digunakan.',
+                        'Mampu memanfaatkan teknologi digital untuk strategi pemasaran dan berkomunikasi secara persuasif kepada publik.'
+                    ].map((item, i) => (
+                        <li key={i} style={{ display: 'flex', alignItems: 'start', gap: '1rem', marginBottom: '1rem' }}>
+                            <span style={{ color: 'var(--color-secondary)', fontSize: '1.5rem', lineHeight: 1 }}>➤</span>
+                            <span>{item}</span>
+                        </li>
+                    ))}
+                </ul>
             </section>
 
             {/* III. DIMENSI PROFIL LULUSAN */}
