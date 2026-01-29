@@ -20,9 +20,10 @@ export default function Header() {
                     textDecoration: 'none',
                     display: 'flex',
                     alignItems: 'center',
-                    gap: '0.5rem'
+                    gap: '1rem' // increased gap
                 }}>
-                    <span style={{ fontSize: '2rem' }}>🏛️</span> SMAN 1 BELITANG
+                    <img src="/logo.png" alt="Logo SMAN 1 Belitang" style={{ height: '50px', width: 'auto' }} />
+                    <span style={{ fontSize: '1.2rem', letterSpacing: '1px' }}>SMAN 1 BELITANG</span>
                 </Link>
                 <nav>
                     <ul style={{ display: 'flex', gap: '1rem', listStyle: 'none', margin: 0, padding: 0 }}>
