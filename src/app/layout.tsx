@@ -30,7 +30,7 @@ export default function RootLayout({
             marginTop: "auto",
           }}
         >
-          <p>© 2026 SMA Negeri 1 Belitang - Cita Rasa Nusantara</p>
+          <p>© 2026 - Tim Kurikulum SMA Negeri 1 Belitang</p>
         </footer>
       </body>
     </html>

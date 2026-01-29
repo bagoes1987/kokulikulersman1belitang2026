@@ -4,8 +4,6 @@ import { createClient } from '@supabase/supabase-js';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
-// NOTE: In a real production app, use SessionContextProvider.
-// For this quick iteration/prototype, we use a direct client.
 const supabase = createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL || 'YOUR_SUPABASE_URL_PLACEHOLDER',
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'YOUR_SUPABASE_KEY_PLACEHOLDER'
@@ -16,13 +14,11 @@ export default function AuthDependentContent() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        // Check active session
         supabase.auth.getSession().then(({ data: { session } }) => {
             setSession(session);
             setLoading(false);
         });
 
-        // Listen for changes
         const {
             data: { subscription },
         } = supabase.auth.onAuthStateChange((_event, session) => {
@@ -93,27 +89,101 @@ export default function AuthDependentContent() {
         );
     }
 
-    // PUBLIC VIEW (NOT LOGGED IN): Show Info Text
+    // PUBLIC VIEW (NOT LOGGED IN): Show Detailed Info
     return (
-        <div className="glass-card animate-slide-up" style={{
-            padding: '3rem',
-            marginBottom: '6rem',
-            textAlign: 'center',
-            borderLeft: '5px solid var(--color-primary)' // Accent to make it pop
-        }}>
-            <h2 style={{ fontSize: '2rem', color: 'var(--color-primary)', marginBottom: '1.5rem' }}>
-                Tentang Kokurikuler
-            </h2>
-            <p style={{ fontSize: '1.25rem', lineHeight: '1.8', color: '#555', maxWidth: '800px', margin: '0 auto' }}>
-                Kokurikuler merupakan kegiatan pembelajaran yang dilaksanakan untuk penguatan,
-                pendalaman, dan/atau pengayaan kegiatan Intrakurikuler dalam rangka pengembangan kompetensi,
-                terutama penguatan karakter.
-            </p>
-            <div style={{ marginTop: '2rem' }}>
-                <Link href="/login" className="btn btn-primary" style={{ borderRadius: '50px', padding: '0.8rem 2rem' }}>
-                    Masuk untuk Mengakses Materi
+        <div className="animate-slide-up" style={{ marginBottom: '6rem' }}>
+
+            {/* CTA Section */}
+            <div className="glass-card" style={{
+                padding: '3rem',
+                textAlign: 'center',
+                marginBottom: '4rem',
+                borderLeft: '5px solid var(--color-primary)'
+            }}>
+                <h2 style={{ fontSize: '2rem', color: 'var(--color-primary)', marginBottom: '1rem' }}>
+                    Selamat Datang di Portal Kokurikuler
+                </h2>
+                <p style={{ fontSize: '1.2rem', marginBottom: '2rem' }}>
+                    Silakan masuk untuk mengakses materi kegiatan hari 1-3.
+                </p>
+                <Link href="/login" className="btn btn-primary" style={{ borderRadius: '50px', padding: '0.8rem 2.5rem', fontSize: '1.1rem' }}>
+                    Masuk Sekarang
                 </Link>
             </div>
+
+            {/* I. INFORMASI UMUM */}
+            <section className="glass-card" style={{ padding: '3rem', marginBottom: '2rem' }}>
+                <h3 style={{ color: 'var(--color-primary)', fontSize: '1.8rem', borderBottom: '2px solid var(--color-secondary)', paddingBottom: '0.5rem', marginBottom: '1.5rem' }}>
+                    I. INFORMASI UMUM
+                </h3>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '1rem', fontSize: '1.1rem' }}>
+                    <p><strong>Nama Satuan Pendidikan:</strong> SMA Negeri 1 Belitang</p>
+                    <p><strong>Kelas / Fase:</strong> X (Sepuluh) / Fase E</p>
+                    <p><strong>Tema:</strong> Cita Rasa Nusantara</p>
+                    <p><strong>Bentuk Kegiatan:</strong> Pembelajaran Kolaboratif Lintas Disiplin Ilmu</p>
+                    <p><strong>Alokasi Waktu:</strong> 3 Hari Efektif</p>
+                    <p><strong>Lokasi Kegiatan:</strong> Ruang Kelas dan Lapangan Utama SMAN 1 Belitang</p>
+                </div>
+            </section>
+
+            {/* II. DIMENSI PROFIL LULUSAN */}
+            <section className="glass-card" style={{ padding: '3rem', marginBottom: '2rem' }}>
+                <h3 style={{ color: 'var(--color-primary)', fontSize: '1.8rem', borderBottom: '2px solid var(--color-secondary)', paddingBottom: '0.5rem', marginBottom: '1.5rem' }}>
+                    II. DIMENSI PROFIL LULUSAN
+                </h3>
+                <ul style={{ listStyle: 'none', padding: 0 }}>
+                    <li style={{ marginBottom: '1.5rem' }}>
+                        <strong style={{ color: 'var(--color-accent)', fontSize: '1.2rem' }}>Kreativitas</strong>
+                        <p style={{ marginTop: '0.5rem' }}>Murid diharapkan mampu menghasilkan gagasan orisinal, menciptakan inovasi produk kuliner, dan merumuskan solusi bagi permasalahan di sekitarnya.</p>
+                    </li>
+                    <li>
+                        <strong style={{ color: 'var(--color-accent)', fontSize: '1.2rem' }}>Komunikasi</strong>
+                        <p style={{ marginTop: '0.5rem' }}>Murid memiliki kemampuan menyimak, membaca, berbicara, dan menulis dengan baik sesuai etika dalam beragam konteks dan moda untuk memasarkan produk.</p>
+                    </li>
+                </ul>
+            </section>
+
+            {/* III. TUJUAN PEMBELAJARAN */}
+            <section className="glass-card" style={{ padding: '3rem', marginBottom: '2rem' }}>
+                <h3 style={{ color: 'var(--color-primary)', fontSize: '1.8rem', borderBottom: '2px solid var(--color-secondary)', paddingBottom: '0.5rem', marginBottom: '1.5rem' }}>
+                    III. TUJUAN PEMBELAJARAN
+                </h3>
+                <p style={{ marginBottom: '1rem', fontStyle: 'italic' }}>Kegiatan kokurikuler ini bertujuan untuk menguatkan kompetensi murid agar:</p>
+                <ul style={{ listStyle: 'none', padding: 0 }}>
+                    {[
+                        'Mampu melakukan inovasi pengolahan makanan khas Nusantara dengan mempertimbangkan nilai ekonomis dan perhitungan Break Even Point (BEP).',
+                        'Mampu menganalisis dan menjelaskan kandungan gizi serta higienitas bahan pangan yang digunakan.',
+                        'Mampu memanfaatkan teknologi digital untuk strategi pemasaran dan berkomunikasi secara persuasif kepada publik.'
+                    ].map((item, i) => (
+                        <li key={i} style={{ display: 'flex', alignItems: 'start', gap: '1rem', marginBottom: '1rem' }}>
+                            <span style={{ color: 'var(--color-secondary)', fontSize: '1.5rem', lineHeight: 1 }}>➤</span>
+                            <span>{item}</span>
+                        </li>
+                    ))}
+                </ul>
+            </section>
+
+            {/* IV. KEMITRAAN PEMBELAJARAN */}
+            <section className="glass-card" style={{ padding: '3rem' }}>
+                <h3 style={{ color: 'var(--color-primary)', fontSize: '1.8rem', borderBottom: '2px solid var(--color-secondary)', paddingBottom: '0.5rem', marginBottom: '1.5rem' }}>
+                    IV. KEMITRAAN PEMBELAJARAN (INTERNAL)
+                </h3>
+                <p style={{ marginBottom: '1.5rem' }}>Kegiatan ini melibatkan kolaborasi antar guru mata pelajaran sebagai berikut:</p>
+                <div style={{ display: 'grid', gap: '1.5rem' }}>
+                    <div>
+                        <strong style={{ color: '#2F1B10', fontSize: '1.15rem' }}>Guru PKWU</strong>
+                        <p>Membimbing inovasi resep makanan agar memiliki daya tarik pasar dan mengajari teknik perhitungan BEP (modal, harga jual, dan laba).</p>
+                    </div>
+                    <div>
+                        <strong style={{ color: '#2F1B10', fontSize: '1.15rem' }}>Guru TIK</strong>
+                        <p>Mendampingi pembuatan konten digital kreatif melalui video promosi, status WhatsApp, dan konten Instagram untuk pemasaran produk.</p>
+                    </div>
+                    <div>
+                        <strong style={{ color: '#2F1B10', fontSize: '1.15rem' }}>Guru Biologi</strong>
+                        <p>Memberikan edukasi terkait kandungan gizi (karbohidrat, protein, lemak, vitamin) serta kalori dari bahan masakan yang dipilih.</p>
+                    </div>
+                </div>
+            </section>
         </div>
     );
 }
