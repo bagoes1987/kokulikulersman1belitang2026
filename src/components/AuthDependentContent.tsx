@@ -108,7 +108,7 @@ export default function AuthDependentContent() {
                 </div>
             </section>
 
-            {/* II. TUJUAN PEMBELAJARAN (Was III) */}
+            {/* II. TUJUAN PEMBELAJARAN */}
             <section className="glass-card" style={{ padding: '3rem', marginBottom: '2rem' }}>
                 <h3 style={{ color: 'var(--color-primary)', fontSize: '1.8rem', borderBottom: '2px solid var(--color-secondary)', paddingBottom: '0.5rem', marginBottom: '1.5rem' }}>
                     II. TUJUAN PEMBELAJARAN
@@ -128,7 +128,7 @@ export default function AuthDependentContent() {
                 </ul>
             </section>
 
-            {/* III. DIMENSI PROFIL LULUSAN (Was II) */}
+            {/* III. DIMENSI PROFIL LULUSAN */}
             <section className="glass-card" style={{ padding: '3rem', marginBottom: '2rem' }}>
                 <h3 style={{ color: 'var(--color-primary)', fontSize: '1.8rem', borderBottom: '2px solid var(--color-secondary)', paddingBottom: '0.5rem', marginBottom: '1.5rem' }}>
                     III. DIMENSI PROFIL LULUSAN
@@ -145,10 +145,54 @@ export default function AuthDependentContent() {
                 </ul>
             </section>
 
-            {/* IV. KEMITRAAN PEMBELAJARAN */}
+            {/* IV. IDENTIFIKASI MASALAH */}
+            <section className="glass-card" style={{ padding: '3rem', marginBottom: '2rem' }}>
+                <h3 style={{ color: 'var(--color-primary)', fontSize: '1.8rem', borderBottom: '2px solid var(--color-secondary)', paddingBottom: '0.5rem', marginBottom: '1.5rem' }}>
+                    IV. IDENTIFIKASI MASALAH
+                </h3>
+                <div style={{ marginBottom: '1.5rem' }}>
+                    <p style={{ marginBottom: '1rem', fontWeight: 'bold' }}>Beberapa kondisi yang ditemukan pada peserta didik, antara lain:</p>
+                    <ol style={{ paddingLeft: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                        <li>Lebih mengenal makanan/masakan modern atau makanan kemasan dibandingkan makanan/masakan Nusantara.</li>
+                        <li>Sering memilih makanan dengan kandungan gula dan pewarna yang tinggi.</li>
+                        <li>Kurang mengenal bahan masakan khas Nusantara.</li>
+                        <li>Belum memahami cara mengolah masakan khas Nusantara yang sehat.</li>
+                        <li>Belum terbiasa membaca label makanan.</li>
+                        <li>Kurang percaya diri dalam menjual produk makanan.</li>
+                    </ol>
+                </div>
+                <div>
+                    <p style={{ marginBottom: '1rem', fontWeight: 'bold' }}>Oleh karena itu, kegiatan ini perlu dilaksanakan untuk:</p>
+                    <ol style={{ paddingLeft: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                        <li>Melestarikan makanan khas Nusantara</li>
+                        <li>Membiasakan pola makan sehat</li>
+                        <li>Mengenalkan bahan pangan masakan khas Nusantara yang bergizi</li>
+                        <li>Melatih kewirausahaan sederhana</li>
+                        <li>Melatih kolaborasi dan kreativitas peserta didik</li>
+                    </ol>
+                </div>
+            </section>
+
+            {/* V. HUBUNGAN DENGAN 7 KEBIASAAN ANAK HEBAT (7 KAIH) */}
+            <section className="glass-card" style={{ padding: '3rem', marginBottom: '2rem' }}>
+                <h3 style={{ color: 'var(--color-primary)', fontSize: '1.8rem', borderBottom: '2px solid var(--color-secondary)', paddingBottom: '0.5rem', marginBottom: '1.5rem' }}>
+                    V. HUBUNGAN DENGAN 7 KEBIASAAN ANAK HEBAT (7 KAIH)
+                </h3>
+                <ol style={{ paddingLeft: '1.5rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                    <li><strong>Proaktif</strong> → Aktif mencari informasi dan bahan makanan khas Nusantara sehat</li>
+                    <li><strong>Mulai dari Akhir dalam Pikiran</strong> → Menentukan target produk dan hasil bazar sejak awal</li>
+                    <li><strong>Dahulukan yang Utama</strong> → Mengutamakan kebersihan, kesehatan, dan keamanan pangan</li>
+                    <li><strong>Berpikir Menang–Menang</strong> → Bekerja sama dalam kelompok secara adil dan saling menguntungkan</li>
+                    <li><strong>Berusaha Mengerti Dulu, Baru Dimengerti</strong> → Menghargai pendapat dan ide anggota kelompok</li>
+                    <li><strong>Bersinergi</strong> → Berkolaborasi dalam proses memasak, pengemasan, dan penjualan produk</li>
+                    <li><strong>Belajar dari Pengalaman</strong> → Melakukan refleksi terhadap hasil praktik dan kegiatan bazar</li>
+                </ol>
+            </section>
+
+            {/* VI. KEMITRAAN PEMBELAJARAN */}
             <section className="glass-card" style={{ padding: '3rem', marginBottom: '4rem' }}>
                 <h3 style={{ color: 'var(--color-primary)', fontSize: '1.8rem', borderBottom: '2px solid var(--color-secondary)', paddingBottom: '0.5rem', marginBottom: '1.5rem' }}>
-                    IV. KEMITRAAN PEMBELAJARAN (INTERNAL)
+                    VI. KEMITRAAN PEMBELAJARAN (INTERNAL)
                 </h3>
                 <p style={{ marginBottom: '1.5rem' }}>Kegiatan ini melibatkan kolaborasi antar guru mata pelajaran sebagai berikut:</p>
                 <div style={{ display: 'grid', gap: '1.5rem' }}>
