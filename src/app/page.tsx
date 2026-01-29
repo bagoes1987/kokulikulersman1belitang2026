@@ -15,10 +15,10 @@ export default function Home() {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         opacity: 0.3, // "Transparan" effect requested
-        zIndex: -1
+        zIndex: 0 // Z-index fixed for visibility
       }} />
 
-      <div className="container" style={{ padding: '2rem 1rem', position: 'relative' }}>
+      <div className="container" style={{ padding: '2rem 1rem', position: 'relative', zIndex: 1 }}>
         {/* Hero Section */}
         <section style={{ textAlign: 'center', marginBottom: '4rem', padding: '4rem 0' }}>
           <h1 style={{ fontSize: '3rem', color: 'var(--color-primary)', marginBottom: '1rem', textShadow: '2px 2px 4px rgba(255,255,255,0.8)' }}>
