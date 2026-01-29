@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div style={{ position: 'relative', minHeight: 'calc(100vh - 80px)' }}> {/* Adjust height based on header */}
+    <div style={{ position: 'relative', minHeight: 'calc(100vh - 80px)' }}>
 
       {/* Background Image Layer */}
       <div style={{
@@ -14,81 +14,105 @@ export default function Home() {
         backgroundImage: 'url(/landing-bg.png)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        opacity: 0.3, // "Transparan" effect requested
-        zIndex: 0 // Z-index fixed for visibility
+        opacity: 0.3,
+        zIndex: 0
       }} />
 
-      <div className="container" style={{ padding: '2rem 1rem', position: 'relative', zIndex: 1 }}>
+      <div className="container animate-fade-in" style={{ padding: '4rem 1rem', position: 'relative', zIndex: 1, paddingTop: '100px' }}>
         {/* Hero Section */}
-        <section style={{ textAlign: 'center', marginBottom: '4rem', padding: '4rem 0' }}>
-          <h1 style={{ fontSize: '3rem', color: 'var(--color-primary)', marginBottom: '1rem', textShadow: '2px 2px 4px rgba(255,255,255,0.8)' }}>
+        <section style={{ textAlign: 'center', marginBottom: '6rem' }}>
+          <h1 className="animate-slide-up" style={{
+            fontSize: '4rem',
+            color: 'var(--color-primary)',
+            marginBottom: '1.5rem',
+            textShadow: '2px 2px 4px rgba(255,255,255,0.8)',
+            letterSpacing: '-1px'
+          }}>
             Cita Rasa Nusantara
           </h1>
-          <p style={{ fontSize: '1.5rem', maxWidth: '800px', margin: '0 auto', color: '#2F1B10', fontWeight: '500', textShadow: '1px 1px 2px rgba(255,255,255,0.8)' }}>
-            Projek Penguatan Profil Pelajar Pancasila (P5) - SMA Negeri 1 Belitang
+          <p className="animate-slide-up delay-100" style={{
+            fontSize: '1.5rem',
+            maxWidth: '700px',
+            margin: '0 auto',
+            color: '#4A3728',
+            fontWeight: '600',
+            lineHeight: '1.6',
+            textShadow: '1px 1px 2px rgba(255,255,255,0.8)'
+          }}>
+            Projek Penguatan Profil Pelajar Pancasila (P5) <br />
+            <span style={{ color: 'var(--color-primary)', fontSize: '1.2rem', textTransform: 'uppercase', letterSpacing: '2px' }}>SMA Negeri 1 Belitang</span>
           </p>
         </section>
 
-        {/* Days Grid */}
+        {/* Days Cards */}
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-          gap: '2rem',
-          marginBottom: '4rem'
+          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+          gap: '2.5rem',
+          marginBottom: '6rem'
         }}>
-          {['Day 1', 'Day 2', 'Day 3'].map((day, index) => (
-            <div key={day} className="card" style={{
+          {['Eksplorasi & Ideasi', 'Produksi & Promosi', 'Panen Raya'].map((title, index) => (
+            <div key={index} className={`glass-card animate-slide-up delay-${(index + 1) * 100}`} style={{
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
               textAlign: 'center',
-              transition: 'transform 0.2s',
               cursor: 'pointer',
-              backgroundColor: 'rgba(255, 255, 255, 0.9)' // Slightly clearer cards against bg
+              position: 'relative',
+              overflow: 'hidden'
             }}>
               <div style={{
-                width: '80px',
-                height: '80px',
+                width: '70px',
+                height: '70px',
                 borderRadius: '50%',
-                backgroundColor: 'var(--color-secondary)',
+                background: 'linear-gradient(135deg, var(--color-primary), var(--color-secondary))',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 fontSize: '2rem',
                 fontWeight: 'bold',
-                color: 'var(--color-text)',
-                marginBottom: '1rem'
+                color: 'white',
+                marginBottom: '1.5rem',
+                boxShadow: '0 10px 20px rgba(139, 69, 19, 0.3)'
               }}>
                 {index + 1}
               </div>
-              <h2 style={{ color: 'var(--color-primary)' }}>{day}</h2>
-              <p style={{ marginBottom: '1.5rem', flexGrow: 1 }}>
-                {index === 0 && 'Eksplorasi & Ideasi: Menggali potensi kuliner nusantara.'}
-                {index === 1 && 'Produksi & Promosi: Mengolah rasa dan strategi pasar.'}
-                {index === 2 && 'Panen Raya (Market Day): Gelar karya dan wirausaha.'}
+              <h2 style={{ color: 'var(--color-primary)', fontSize: '1.8rem', marginBottom: '0.5rem' }}>Day {index + 1}</h2>
+              <h3 style={{ fontSize: '1.2rem', color: '#6B4E3D', marginBottom: '1rem', fontWeight: '600' }}>{title}</h3>
+              <p style={{ marginBottom: '2rem', flexGrow: 1, lineHeight: '1.6', color: '#555' }}>
+                {index === 0 && 'Menggali potensi kuliner nusantara melalui riset dan ideasi kreatif.'}
+                {index === 1 && 'Mengolah rasa authentik dan menyusun strategi pemasaran digital yang modern.'}
+                {index === 2 && 'Market Day: Gelar karya wirausaha dan apresiasi seni kuliner.'}
               </p>
-              <Link href={`/days/${index + 1}`} className="btn btn-primary" style={{ width: '100%' }}>
-                Lihat Kegiatan
+              <Link href={`/days/${index + 1}`} className="btn btn-primary" style={{
+                width: '100%',
+                borderRadius: '50px',
+                textTransform: 'uppercase',
+                letterSpacing: '1px',
+                fontSize: '0.9rem'
+              }}>
+                Mulai Kegiatan
               </Link>
             </div>
           ))}
         </div>
 
-        {/* Info Section */}
-        <section className="card" style={{ padding: '3rem', backgroundColor: 'rgba(255, 248, 220, 0.95)' }}>
-          <h2 style={{ textAlign: 'center', marginBottom: '2rem' }}>Tujuan Pembelajaran</h2>
-          <ul style={{ listStyle: 'none', display: 'grid', gap: '1rem' }}>
+        {/* Learning Goals Section */}
+        <section className="glass-card animate-slide-up delay-300" style={{ padding: '4rem 2rem', borderLeft: '5px solid var(--color-secondary)' }}>
+          <h2 style={{ textAlign: 'center', marginBottom: '3rem', color: 'var(--color-primary)', fontSize: '2.5rem' }}>Tujuan Pembelajaran</h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
             {[
-              'Menciptakan inovasi kuliner Nusantara yang bernilai ekonomis.',
-              'Menganalisis kandungan gizi dan higienitas pangan.',
-              'Memanfaatkan teknologi digital untuk pemasaran kreatif.'
-            ].map((goal, i) => (
-              <li key={i} style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                <span style={{ color: 'var(--color-accent)', fontSize: '1.5rem' }}>✓</span>
-                {goal}
-              </li>
+              { icon: '🥘', text: 'Inovasi Kuliner', desc: 'Menciptakan produk bernilai ekonomis tinggi.' },
+              { icon: '🥗', text: 'Analisis Gizi', desc: 'Memahami kandungan nutrisi dan higienitas.' },
+              { icon: '📱', text: 'Digital Marketing', desc: 'Strategi pemasaran kreatif berbasis teknologi.' }
+            ].map((item, i) => (
+              <div key={i} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+                <span style={{ fontSize: '3rem', marginBottom: '1rem', filter: 'drop-shadow(0 4px 6px rgba(0,0,0,0.1))' }}>{item.icon}</span>
+                <h4 style={{ fontSize: '1.2rem', color: 'var(--color-text)', marginBottom: '0.5rem' }}>{item.text}</h4>
+                <p style={{ color: '#666' }}>{item.desc}</p>
+              </div>
             ))}
-          </ul>
+          </div>
         </section>
       </div>
     </div>
